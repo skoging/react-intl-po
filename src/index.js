@@ -5,7 +5,7 @@ import potHeader from './potHeader';
 import readAllMessageAsObjectSync from './readAllMessageAsObjectSync';
 import readAllPOAsObjectSync from './readAllPOAsObjectSync';
 
-export default {
+export {
   extractAndWritePOTFromMessagesSync,
   filterPOAndWriteTranslateSync,
   potFormater,
