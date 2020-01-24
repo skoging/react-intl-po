@@ -28,8 +28,8 @@ $ yarn add react-intl-po
 
 ## Requirements and Workflow
 
-* [react-intl](https://github.com/yahoo/react-intl) `^2.0.0`
-* [babel-plugin-react-intl](https://github.com/yahoo/babel-plugin-react-intl) `^2.0.0`
+- [react-intl](https://github.com/yahoo/react-intl) `^2.0.0`
+- [babel-plugin-react-intl](https://github.com/yahoo/babel-plugin-react-intl) `^2.0.0`
 
 ![RIP Workflow](./docs/workflow.png)
 
@@ -146,8 +146,8 @@ R.pipe(
 
 ### Requirements
 
-* node >= 9.11.1
-* yarn >= 1.5.1
+- node >= 9.11.1
+- yarn >= 1.5.1
 
 ### Test
 
@@ -172,9 +172,9 @@ $ npm version patch
 
 ## CONTRIBUTING
 
-* ⇄ Pull requests and ★ Stars are always welcome.
-* For bugs and feature requests, please create an issue.
-* Pull requests must be accompanied by passing automated tests (`$ yarn run test`).
+- ⇄ Pull requests and ★ Stars are always welcome.
+- For bugs and feature requests, please create an issue.
+- Pull requests must be accompanied by passing automated tests (`$ yarn run test`).
 
 ## [CHANGELOG](CHANGELOG.md)
 

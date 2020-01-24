@@ -19,7 +19,10 @@ import * as R from 'ramda';
 const potHeader = (options = {}) => {
   const o = R.evolve({
     comments: R.pipe(
-      R.cond([[R.is(Array), R.identity], [R.is(String), R.of]]),
+      R.cond([
+        [R.is(Array), R.identity],
+        [R.is(String), R.of],
+      ]),
       R.map(R.split('\n')),
       R.flatten,
       R.map(e => `# ${e}`),
