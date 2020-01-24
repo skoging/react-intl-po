@@ -2,6 +2,9 @@
 
 import program from 'commander';
 
+import extractAndWritePOTFromMessagesSync from './extractAndWritePOTFromMessagesSync';
+import filterPOAndWriteTranslateSync from './filterPOAndWriteTranslateSync';
+
 const numberOrChars = s => (/^\d+$/.test(s) ? parseInt(s, 10) : s);
 
 program
@@ -18,7 +21,7 @@ program
     '-c, --message-context [context]',
     'Translation message context (defaults to no context)',
   )
-  .action(require('./extractAndWritePOTFromMessagesSync'));
+  .action(extractAndWritePOTFromMessagesSync);
 
 program
   .command('po2json <srcPatterns>')
@@ -52,6 +55,6 @@ program
     '--sort-by-id',
     'If specified, the entries of each language are sorted by id before being output',
   )
-  .action(require('./filterPOAndWriteTranslateSync'));
+  .action(filterPOAndWriteTranslateSync);
 
 program.parse(process.argv);
