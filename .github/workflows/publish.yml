@@ -1,11 +1,44 @@
-name: Publish
+name: Test, Build, Publish
 
 on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
   release:
     types: [created]
 
 jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - run: yarn test:coverage
+      - run: yarn codecov
+        if: success()
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - run: yarn clean
+      - run: yarn build
+      - uses: actions/upload-artifact@v1
+        with:
+          name: lib
+          path: lib
+
   publish-npm:
+    if: github.event_name == 'release' && github.event.action == 'created'
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
@@ -21,6 +54,8 @@ jobs:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
 
   publish-gpr:
+    if: github.event_name == 'release' && github.event.action == 'created'
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
