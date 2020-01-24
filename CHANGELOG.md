@@ -4,6 +4,14 @@
 
 > Unreleased
 
+## [v3.0.0-6]
+
+> January 24, 2020
+
+- feat(messageValue): Allow user to specify msgstr with `-v` arguments. ([@pospi](https://github.com/pospi)in [#2])
+
+- BREAKING_CHANGE: Update all dependencies
+
 ## [v2.2.2]
 
 > April 30, 2018
