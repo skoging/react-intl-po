@@ -1,6 +1,6 @@
 {
   "name": "@skoging/react-intl-po",
-  "version": "3.0.0-5",
+  "version": "3.0.0-6",
   "description": "Extract POT from react-intl and convert back to json.",
   "author": "Michael Hsu",
   "license": "MIT",
