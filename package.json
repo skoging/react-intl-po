@@ -5,12 +5,12 @@
   "author": "Michael Hsu",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/evenchange4/react-intl-po/issues"
+    "url": "https://github.com/skoging/react-intl-po/issues"
   },
-  "homepage": "https://github.com/evenchange4/react-intl-po#readme",
+  "homepage": "https://github.com/skoging/react-intl-po#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/evenchange4/react-intl-po.git"
+    "url": "https://github.com/skoging/react-intl-po.git"
   },
   "main": "lib/index.js",
   "bin": {

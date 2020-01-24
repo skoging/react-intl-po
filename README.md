@@ -4,7 +4,7 @@
 >
 > messages.json → POT → PO → translation.json
 
-[![Travis][build-badge]][build]
+[![Github Actions][build-badge]][build]
 [![Codecov Status][codecov-badge]][codecov]
 [![npm package][npm-badge]][npm]
 [![npm downloads][npm-downloads]][npm]
@@ -108,7 +108,7 @@ $ rip po2json './node_modules/mcs-translation/po/mcs-public*.po' \`
     -c 'id'
 ```
 
-Example: https://github.com/evenchange4/react-intl-po-example#option
+Example: https://github.com/skoging/react-intl-po-example#option
 
 #### Option 2: [Maybe deprecated next major release]
 
@@ -178,18 +178,18 @@ $ npm version patch
 
 MIT: [http://michaelhsu.mit-license.org](http://michaelhsu.mit-license.org)
 
-[build-badge]: https://img.shields.io/travis/evenchange4/react-intl-po/master.svg?style=flat-square
-[build]: https://travis-ci.org/evenchange4/react-intl-po
-[npm-badge]: https://img.shields.io/npm/v/react-intl-po.svg?style=flat-square
-[npm]: https://www.npmjs.org/package/react-intl-po
-[codecov-badge]: https://img.shields.io/codecov/c/github/evenchange4/react-intl-po.svg?style=flat-square
-[codecov]: https://codecov.io/github/evenchange4/react-intl-po?branch=master
-[npm-downloads]: https://img.shields.io/npm/dt/react-intl-po.svg?style=flat-square
-[license-badge]: https://img.shields.io/npm/l/react-intl-po.svg?style=flat-square
+[build-badge]: https://img.shields.io/github/workflow/status/skoging/react-intl-po/Test,%20Build,%20Publish?style=flat-square
+[build]: https://github.com/skoging/react-intl-po/actions?query=workflow%3A%22Test%2C+Build%2C+Publish%22
+[npm-badge]: https://img.shields.io/npm/v/@skoging/react-intl-po.svg?style=flat-square
+[npm]: https://www.npmjs.org/package/@skoging/react-intl-po
+[codecov-badge]: https://img.shields.io/codecov/c/github/skoging/react-intl-po.svg?style=flat-square
+[codecov]: https://codecov.io/github/skoging/react-intl-po?branch=master
+[npm-downloads]: https://img.shields.io/npm/dt/@skoging/react-intl-po.svg?style=flat-square
+[license-badge]: https://img.shields.io/npm/l/@skoging/react-intl-po.svg?style=flat-square
 [license]: http://michaelhsu.mit-license.org/
-[dependency-badge]: https://david-dm.org/evenchange4/react-intl-po.svg?style=flat-square
-[dependency]: https://david-dm.org/evenchange4/react-intl-po
-[devdependency-badge]: https://david-dm.org/evenchange4/react-intl-po/dev-status.svg?style=flat-square
-[devdependency]: https://david-dm.org/evenchange4/react-intl-po#info=devDependencies
-[peerdependency-badge]: https://david-dm.org/evenchange4/react-intl-po/peer-status.svg?style=flat-square
-[peerdependency]: https://david-dm.org/evenchange4/react-intl-po#info=peerDependencies
+[dependency-badge]: https://david-dm.org/skoging/react-intl-po.svg?style=flat-square
+[dependency]: https://david-dm.org/skoging/react-intl-po
+[devdependency-badge]: https://david-dm.org/skoging/react-intl-po/dev-status.svg?style=flat-square
+[devdependency]: https://david-dm.org/skoging/react-intl-po#info=devDependencies
+[peerdependency-badge]: https://david-dm.org/skoging/react-intl-po/peer-status.svg?style=flat-square
+[peerdependency]: https://david-dm.org/skoging/react-intl-po#info=peerDependencies
