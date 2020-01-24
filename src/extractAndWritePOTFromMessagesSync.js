@@ -1,6 +1,8 @@
 /* eslint-disable no-console */
 
 import fs from 'fs';
+import path from 'path';
+import mkdirp from 'mkdirp';
 import chalk from 'chalk';
 import * as R from 'ramda';
 import readAllMessageAsObjectSync from './readAllMessageAsObjectSync';
@@ -32,6 +34,8 @@ function extractAndWritePOTFromMessagesSync(
     ),
     // 3. String: with pot head
   )(srcPatterns, messageKey, messageContext);
+
+  mkdirp.sync(path.dirname(output)); // ensure the output folder exists
 
   // Output
   fs.writeFileSync(output, result);
