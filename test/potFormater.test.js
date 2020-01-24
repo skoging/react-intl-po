@@ -104,7 +104,7 @@ it('should return pot formatted string, with message context', () => {
 
 it('should return po formatted string, with message value', () => {
   expect(
-    potFormater("defaultMessage")({
+    potFormater('defaultMessage')({
       'App.errorButton': {
         '': [
           {

@@ -9,7 +9,13 @@ import potHeader from './potHeader';
 
 function extractAndWritePOTFromMessagesSync(
   srcPatterns,
-  { messageKey = 'defaultMessage', messageValue = null, messageContext = '', output, headerOptions },
+  {
+    messageKey = 'defaultMessage',
+    messageValue = null,
+    messageContext = '',
+    output,
+    headerOptions,
+  },
 ) {
   const result = R.pipe(
     readAllMessageAsObjectSync,

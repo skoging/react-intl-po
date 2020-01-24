@@ -67,7 +67,7 @@ const potContextsFormater = messageContext =>
  * @author Michael Hsu
  */
 
-const potFormater = (messageValue) => (messageObject) =>
+const potFormater = messageValue => messageObject =>
   Object.keys(messageObject) // return array of id
     .sort()
     .map(id =>
@@ -78,7 +78,9 @@ const potFormater = (messageValue) => (messageObject) =>
               messageObject[id][context],
             )}${potContextsFormater(context)}msgid ${JSON.stringify(
               id,
-            )}\nmsgstr "${messageValue ? messageObject[id][context][0][messageValue] : ''}"\n`,
+            )}\nmsgstr "${
+              messageValue ? messageObject[id][context][0][messageValue] : ''
+            }"\n`,
         )
         .join('\n'),
     )

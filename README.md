@@ -129,7 +129,7 @@ $ rip po2json './node_modules/mcs-translation/po/mcs-public*.po' \`
 
 ### How to generate `*.po` instead of `*.pot`
 
-Set the `message-value (-v)` to `'defaultMessage'` of message object from *babel-plugin-react-intl*. The default behaviour omits values to generate a template file instead of a specific locale.
+Set the `message-value (-v)` to `'defaultMessage'` of message object from _babel-plugin-react-intl_. The default behaviour omits values to generate a template file instead of a specific locale.
 
 ```
 $ rip json2pot '_translations/src/**/*.json' \
@@ -139,7 +139,6 @@ $ rip json2pot '_translations/src/**/*.json' \
 ```
 
 ## Development
-
 
 ### Ramda.js
 
