@@ -1,5 +1,5 @@
 {
-  "name": "react-intl-po",
+  "name": "@skoging/react-intl-po",
   "version": "2.2.2",
   "description": "Extract POT from react-intl and convert back to json.",
   "author": "Michael Hsu",
@@ -14,50 +14,69 @@
   },
   "main": "lib/index.js",
   "bin": {
-    "rip": "lib/cli.js",
-    "react-intl-po": "lib/cli.js"
+    "react-intl-po": "lib/cli.js",
+    "rip": "lib/cli.js"
   },
-  "files": ["lib", "src", "test"],
-  "keywords": ["react-intl", "babel-plugin-react-intl", "po", "pot"],
+  "files": [
+    "lib"
+  ],
+  "keywords": [
+    "react-intl",
+    "babel-plugin-react-intl",
+    "po",
+    "pot"
+  ],
   "scripts": {
-    "clean": "rm -rf lib",
-    "prebuild": "npm run clean",
-    "build": "NODE_ENV=production babel src --out-dir lib",
+    "clean": "rimraf lib",
+    "prebuild": "yarn clean",
+    "build": "cross-env NODE_ENV=production babel src --out-dir lib",
     "test": "jest",
-    "test:watch": "npm run test -- --watch --coverage",
-    "test:coverage": "npm run test -- --coverage",
+    "test:watch": "yarn test --watch --coverage",
+    "test:coverage": "yarn test --coverage",
     "codecov": "codecov",
-    "prepublish": "npm run build",
+    "prepublish": "yarn build",
     "eslint": "eslint --ignore-path .gitignore .",
     "format": "prettier --write '{src,test,config}/**/*.js' '*.{md,json}'",
     "precommit": "lint-staged"
   },
   "devDependencies": {
-    "babel-cli": "6.26.0",
-    "babel-eslint": "8.2.3",
-    "babel-plugin-add-module-exports": "0.2.1",
-    "babel-preset-es2015": "6.24.1",
-    "babel-preset-stage-0": "6.24.1",
-    "codecov": "3.0.2",
-    "eslint": "4.19.1",
-    "eslint-config-airbnb-base": "12.1.0",
-    "eslint-config-prettier": "2.9.0",
-    "eslint-plugin-import": "2.11.0",
-    "eslint-plugin-jest": "21.15.1",
-    "eslint-plugin-prettier": "2.6.0",
-    "husky": "0.14.3",
-    "jest": "22.4.3",
-    "lint-staged": "7.1.0",
-    "prettier": "1.12.1"
+    "@babel/cli": "^7.8.3",
+    "@babel/core": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
+    "babel-eslint": "10.0.3",
+    "codecov": "3.6.2",
+    "cross-env": "6.0.3",
+    "eslint": "6.8.0",
+    "eslint-config-airbnb-base": "14.0.0",
+    "eslint-config-prettier": "6.9.0",
+    "eslint-import-resolver-node": "0.3.3",
+    "eslint-plugin-import": "2.20.0",
+    "eslint-plugin-jest": "23.6.0",
+    "eslint-plugin-prettier": "3.1.2",
+    "husky": "4.2.1",
+    "jest": "25.1.0",
+    "lint-staged": "10.0.2",
+    "prettier": "1.19.1",
+    "rimraf": "^3.0.0"
   },
   "babel": {
-    "presets": ["es2015", "stage-0"],
-    "plugins": ["add-module-exports"]
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "targets": {
+            "node": 10
+          }
+        }
+      ]
+    ]
   },
   "jest": {
     "testEnvironment": "node",
     "testRegex": "(/test/.*|\\.(test))\\.js$",
-    "moduleFileExtensions": ["js"],
+    "moduleFileExtensions": [
+      "js"
+    ],
     "snapshotSerializers": [
       "./config/stringSerializer.js",
       "./config/jsonSerializer.js"
@@ -68,7 +87,10 @@
     "singleQuote": true
   },
   "lint-staged": {
-    "*.{js,json,md}": ["prettier --write", "git add"]
+    "*.{js,json,md}": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "eslintConfig": {
     "parser": "babel-eslint",
@@ -79,21 +101,26 @@
       "prettier/flowtype",
       "plugin:jest/recommended"
     ],
-    "plugins": ["prettier", "jest"],
+    "plugins": [
+      "prettier",
+      "jest"
+    ],
     "env": {
       "jest/globals": true
     },
     "rules": {
       "import/no-extraneous-dependencies": 0,
-      "prettier/prettier": ["error"]
+      "prettier/prettier": [
+        "error"
+      ]
     }
   },
   "dependencies": {
-    "chalk": "^2.3.2",
-    "commander": "^2.15.1",
-    "glob": "^7.1.2",
+    "chalk": "^3.0.0",
+    "commander": "^4.1.0",
+    "glob": "^7.1.6",
     "mkdirp": "^0.5.1",
     "po2json": "^0.4.5",
-    "ramda": "^0.25.0"
+    "ramda": "^0.26.1"
   }
 }
