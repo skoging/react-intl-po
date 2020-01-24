@@ -4,6 +4,12 @@
 
 > Unreleased
 
+## [v3.0.0-7]
+
+> January 24, 2020
+
+- feat: Ensure output folder for json2pot command exists
+
 ## [v3.0.0-6]
 
 > January 24, 2020
