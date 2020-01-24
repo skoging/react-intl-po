@@ -1,12 +1,12 @@
 import potFormater from '../src/potFormater';
 
-it('should return a function', () => {
-  expect(typeof potFormater).toBe('function');
+test('should return a function', () => {
+  expect(typeof potFormater(null)).toBe('function');
 });
 
-it('should return pot formatted string', () => {
+test('should return pot formatted string', () => {
   expect(
-    potFormater({
+    potFormater(null)({
       'Go to MCS website': {
         '': [
           {
@@ -29,7 +29,7 @@ it('should return pot formatted string', () => {
 
 it('should return pot formatted string, with null or undefined description', () => {
   expect(
-    potFormater({
+    potFormater(null)({
       'Go to MCS website': {
         '': [
           {
@@ -45,7 +45,7 @@ it('should return pot formatted string, with null or undefined description', () 
 
 it('should return pot formatted string, with multi line values', () => {
   expect(
-    potFormater({
+    potFormater(null)({
       'NotFound.errorButton': {
         '': [
           {
@@ -62,7 +62,7 @@ it('should return pot formatted string, with multi line values', () => {
 
 it('should return pot formatted string, with double quotes escaped', () => {
   expect(
-    potFormater({
+    potFormater(null)({
       'This is "quoted"': {
         '': [
           {
@@ -79,7 +79,7 @@ it('should return pot formatted string, with double quotes escaped', () => {
 
 it('should return pot formatted string, with message context', () => {
   expect(
-    potFormater({
+    potFormater(null)({
       'Go to MCS website': {
         'App.errorButton': [
           {

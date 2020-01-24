@@ -47,12 +47,13 @@ $ rip json2pot '_translations/src/**/*.json' \
     -o ./mcs-public.pot
 ```
 
-| **Arguments**                     | **Description**                                                       |
-| --------------------------------- | --------------------------------------------------------------------- |
-| `srcPatterns`                     | The pattern of _.json_ files extracted from _babel-plugin-react-intl_ |
-| `-o, --output <path>`             | The output pathname of _.pot_ file to be translated                   |
-| `-k, --message-key [key]`         | [Optional] Translation message key (default key is `defaultMessage`)  |
-| `-c, --message-context [context]` | [Optional] Translation message context (defaults to no context)       |
+| **Arguments**                     | **Description**                                                               |
+| --------------------------------- | ----------------------------------------------------------------------------- |
+| `srcPatterns`                     | The pattern of _.json_ files extracted from _babel-plugin-react-intl_         |
+| `-o, --output <path>`             | The output pathname of _.pot_ file to be translated                           |
+| `-k, --message-key [key]`         | [Optional] Translation message key (default key is `defaultMessage`)          |
+| `-c, --message-context [context]` | [Optional] Translation message context (defaults to no context)               |
+| `-v, --message-value [value]`     | [Optional] Translation message value key (default is to leave `msgstr` empty) |
 
 ### po2json
 
@@ -124,6 +125,17 @@ $ rip po2json './node_modules/mcs-translation/po/mcs-public*.po' \`
     -m './_translations/src/**/*.json' \
     -o './translations.json' \
     -k 'id'
+```
+
+### How to generate `*.po` instead of `*.pot`
+
+Set the `message-value (-v)` to `'defaultMessage'` of message object from *babel-plugin-react-intl*. The default behaviour omits values to generate a template file instead of a specific locale.
+
+```
+$ rip json2pot '_translations/src/**/*.json' \
+    -o './mcs-public.po' \
+    -k 'id' \
+    -v 'defaultMessage'
 ```
 
 ## Development

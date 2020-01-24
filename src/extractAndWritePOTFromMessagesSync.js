@@ -9,12 +9,12 @@ import potHeader from './potHeader';
 
 function extractAndWritePOTFromMessagesSync(
   srcPatterns,
-  { messageKey = 'defaultMessage', messageContext = '', output, headerOptions },
+  { messageKey = 'defaultMessage', messageValue = null, messageContext = '', output, headerOptions },
 ) {
   const result = R.pipe(
     readAllMessageAsObjectSync,
     // 1. Object { messagekey: { messageContext: [[] , []] } }
-    potFormater,
+    potFormater(messageValue),
     // 2. String: pot formated
     R.concat(
       potHeader({

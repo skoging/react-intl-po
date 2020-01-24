@@ -21,6 +21,7 @@ program
     '-c, --message-context [context]',
     'Translation message context (defaults to no context)',
   )
+  .option('-v, --message-value [key]', 'Translation message value key (default is to omit this)')
   .action(extractAndWritePOTFromMessagesSync);
 
 program
