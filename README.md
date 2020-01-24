@@ -128,9 +128,6 @@ $ rip po2json './node_modules/mcs-translation/po/mcs-public*.po' \`
 
 ## Development
 
-```sh
-$ yarn install --pure-lockfile
-```
 
 ### Ramda.js
 
@@ -146,15 +143,14 @@ R.pipe(
 
 ### Requirements
 
-- node >= 9.11.1
-- yarn >= 1.5.1
+- node >= 10
 
 ### Test
 
 ```sh
-$ yarn run format
-$ yarn run eslint
-$ yarn run test:watch
+$ yarn format
+$ yarn eslint
+$ yarn test:watch
 ```
 
 ### NPM Release
