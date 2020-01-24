@@ -22,7 +22,6 @@ jobs:
       - run: yarn codecov
         if: success()
 
-jobs:
   build:
     runs-on: ubuntu-latest
     steps:
