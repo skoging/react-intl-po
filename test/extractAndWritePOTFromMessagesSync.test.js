@@ -45,3 +45,18 @@ it('should return messages object with messageContext', () => {
   });
   expect(fs.readFileSync(output, 'utf8')).toMatchSnapshot();
 });
+
+it('should return messages object with messageValue', () => {
+  const output = './test/temp/extract-messageValue.po';
+  const headerOptions = {
+    potCreationDate: new Date(Date.UTC(2017, 1, 1, 11, 23, 12)),
+  };
+
+  extractAndWritePOTFromMessagesSync('./test/messages/**/*.json', {
+    output,
+    headerOptions,
+    messageKey: 'id',
+    messageValue: 'defaultMessage',
+  });
+  expect(fs.readFileSync(output, 'utf8')).toMatchSnapshot();
+});
