@@ -1,15 +1,17 @@
 import extractAndWritePOTFromMessagesSync from './extractAndWritePOTFromMessagesSync';
 import filterPOAndWriteTranslateSync from './filterPOAndWriteTranslateSync';
-import potFormater from './potFormater';
+import potFormaterFactory from './potFormater';
 import potHeader from './potHeader';
 import readAllMessageAsObjectSync from './readAllMessageAsObjectSync';
 import readAllPOAsObjectSync from './readAllPOAsObjectSync';
 
+const potFormater = potFormaterFactory(null);
+
 export {
   extractAndWritePOTFromMessagesSync,
   filterPOAndWriteTranslateSync,
-  potFormater: potFormater(null),
-  potFormaterFactory: potFormater,
+  potFormater,
+  potFormaterFactory,
   potHeader,
   readAllMessageAsObjectSync,
   readAllPOAsObjectSync,
