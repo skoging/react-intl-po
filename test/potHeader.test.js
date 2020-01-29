@@ -44,6 +44,7 @@ it('should return pot header, with all options', () => {
       potCreationDate: new Date(Date.UTC(1995, 11, 17, 3, 24, 0)),
       charset: 'UTF-8',
       encoding: '8bit',
+      language: 'en-US',
     }),
   ).toMatchSnapshot();
 });

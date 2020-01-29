@@ -25,6 +25,10 @@ program
     '-v, --message-value [key]',
     'Translation message value key (default is to omit this)',
   )
+  .option(
+    '-l, --language [language]',
+    'The language of the translation message',
+  )
   .action(extractAndWritePOTFromMessagesSync);
 
 program

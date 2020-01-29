@@ -167,6 +167,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\\n"
 "MIME-Version: 1.0\\n"
 "X-Generator: react-intl-po\\n"
+"Language: en-US\\n"
 
 
 #: ./test/messages/src/containers/App/App.json

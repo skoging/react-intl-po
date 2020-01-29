@@ -8,6 +8,7 @@ import * as R from 'ramda';
  * @param {String} [options.projectIdVersion] Project-Id-Version
  * @param {String} [options.charset]
  * @param {String} [options.encoding]
+ * @param {String} [options.language]
  * @return {String} potSource
  *
  * example: see tests
@@ -32,6 +33,7 @@ const potHeader = (options = {}) => {
     potCreationDate: e => `"POT-Creation-Date: ${e.toISOString()}\\n"`,
     charset: e => `"Content-Type: text/plain; charset=${e}\\n"`,
     encoding: e => `"Content-Transfer-Encoding: ${e}\\n"`,
+    language: e => e && `"Language: ${e}\\n"`,
   })(options);
 
   return `${o.comments}
@@ -43,6 +45,7 @@ ${o.charset}
 ${o.encoding}
 "MIME-Version: 1.0\\n"
 "X-Generator: react-intl-po\\n"
+${o.language}
 
 
 `.replace(/undefined\r?\n|\r/g, '');

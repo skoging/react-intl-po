@@ -57,6 +57,7 @@ it('should return messages object with messageValue', () => {
     headerOptions,
     messageKey: 'id',
     messageValue: 'defaultMessage',
+    language: "en-US"
   });
   expect(fs.readFileSync(output, 'utf8')).toMatchSnapshot();
 });
