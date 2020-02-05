@@ -10,6 +10,20 @@ msgstr "Go to MCS website"
 
 `;
 
+exports[`should return po formatted string, with multiline message value 1`] = `
+#: ./messages/src/containers/App/App.json
+#. [App.errorButton] - Click error Button
+#. defaultMessage is:
+#. Go
+#. to
+#. MCS website
+msgid "App.errorButton"
+msgstr "Go\\n"
+"to\\n"
+"MCS website"
+
+`;
+
 exports[`should return pot formatted string 1`] = `
 #: ./messages/src/containers/App/App.json
 #. [App.errorButton] - Click error Button

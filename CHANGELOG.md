@@ -4,6 +4,12 @@
 
 > Unreleased
 
+## [v3.0.0-8]
+
+> January 24, 2020
+
+- feat: Format multiline strings (msgctxt, msgid, msgtxt)
+
 ## [v3.0.0-7]
 
 > January 24, 2020

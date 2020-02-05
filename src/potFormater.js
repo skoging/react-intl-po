@@ -48,6 +48,21 @@ const potCommentsFormater = messageList =>
   }, '');
 
 /**
+ * Formatting POT strings
+ * @param {String} str
+ * @return {String}
+ *
+ * @author Tore Hammervoll
+ */
+const potStringFormatter = (str = '') =>
+  str
+    .split('\n')
+    .map((s, idx, arr) => (idx < arr.length - 1 ? `${s}\n` : s))
+    .map(s => `${JSON.stringify(s)}`)
+    .join('\n')
+    .concat('\n');
+
+/**
  * Formatting POT contexts
  * @param {String} messageContext
  * @return {String}
@@ -55,7 +70,7 @@ const potCommentsFormater = messageList =>
  * @author Sandy Suh
  */
 const potContextsFormater = messageContext =>
-  messageContext ? `msgctxt ${JSON.stringify(messageContext)}\n` : '';
+  messageContext ? `msgctxt ${potStringFormatter(messageContext)}` : '';
 
 /**
  * Formatting POT comments
@@ -76,11 +91,11 @@ const potFormater = messageValue => messageObject =>
           context =>
             `${potCommentsFormater(
               messageObject[id][context],
-            )}${potContextsFormater(context)}msgid ${JSON.stringify(
+            )}${potContextsFormater(context)}msgid ${potStringFormatter(
               id,
-            )}\nmsgstr "${
-              messageValue ? messageObject[id][context][0][messageValue] : ''
-            }"\n`,
+            )}msgstr ${potStringFormatter(
+              messageObject[id][context][0][messageValue],
+            )}`,
         )
         .join('\n'),
     )

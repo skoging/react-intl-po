@@ -118,3 +118,20 @@ it('should return po formatted string, with message value', () => {
     }),
   ).toMatchSnapshot();
 });
+
+it('should return po formatted string, with multiline message value', () => {
+  expect(
+    potFormater('defaultMessage')({
+      'App.errorButton': {
+        '': [
+          {
+            id: 'App.errorButton',
+            description: 'Click error Button',
+            defaultMessage: 'Go\nto\nMCS website',
+            filename: './messages/src/containers/App/App.json',
+          },
+        ],
+      },
+    }),
+  ).toMatchSnapshot();
+});
